@@ -1,80 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bankist</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <header>
-      <p class="welcome fs-3">Bạn cần đăng nhập để băt đầu</p>
-      <img
-        class="img_logo"
-        src="https://inkythuatso.com/uploads/thumbnails/800/2021/11/mb-bank-logo-inkythuatso-01-10-09-02-50.jpg"
-        alt=""
-      />
-      <form class="login" action="">
-        <input
-          class="login__input login__input--user"
-          placeholder="USER"
-          type="text"
-        />
-        <input
-          class="login__input login__input--pin"
-          placeholder="PIN"
-          type="text"
-        />
-        <button class="login__btn btn btn-success">Đăng nhập</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bankist</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header>
+    <p class="welcome fs-3">Bạn cần đăng nhập để bắt đầu</p>
+    <img class="img_logo"
+      src="https://inkythuatso.com/uploads/thumbnails/800/2021/11/mb-bank-logo-inkythuatso-01-10-09-02-50.jpg" alt="" />
+    <form class="login" action="">
+      <input class="login__input login__input--user" placeholder="USER" type="text" />
+      <input class="login__input login__input--pin" placeholder="PIN" type="text" />
+      <button class="login__btn btn btn-success">Đăng nhập</button>
+    </form>
+  </header>
+  <main class="app">
+    <div class="balance">
+      <div>
+        <p class="balance__label fs-3 fw-medium">Số dư hiện tại</p>
+        <p class="balance__date fs-4 fw-medium">Date</p>
+      </div>
+      <p class="balance__value fs-1 fw-bold text-primary">100000 VND</p>
+    </div>
+    <div class="movements p-2">
+      <div class="movements__row d-flex justify-content-between">
+        <div class="badge bg-success">Thông tin</div>
+        <div class="badge bg-info">Số tiền</div>
+      </div>
+    </div>
+    <!-- Transfer form -->
+    <div class="operation operation--transfer bg-warning p-2">
+      <h5>Chuyển tiền</h5>
+      <form class="form form--transfer">
+        <div class="row">
+          <div class=" col-4">
+            <input type="text" class="form-control form__input form__input--to" placeholder="Người nhận">
+          </div>
+          <div class=" col-4">
+            <input type="number" class="form-control form__input form__input--amount" placeholder="Số lượng">
+          </div>
+          <div class=" col-4">
+            <button class="btn btn-primary form__btn--transfer">Thực hiện</button>
+          </div>
+        </div>
       </form>
-    </header>
-    <main class="app">
-        <div class="balance">
-            <div>
-                <p class="balance__label fs-3 fw-medium">Số dư hiện tại</p>
-                <p class="balance__date fs-4 fw-medium">Date</p> 
-            </div>
-            <p class="balance__value fs-1 fw-bold text-primary">100000 VND</p>
+    </div>
+    <!-- Loan form -->
+    <div class="operation operation--loan bg-info p-2">
+      <h5>Vay</h5>
+      <form class="form form--loan">
+        <div class="row">
+          <div class="mb-3 col-6">
+            <input type="text" class="form-control form__input form__input--to" placeholder="Số lượng">
+          </div>
+          <div class="mb-3 col-6">
+            <button class="btn btn-primary form__btn--transfer">Thực hiện</button>
+          </div>
         </div>
-        <div class="movements">
-            <div class="movements__row">
-                <div>Thông tin</div>
-                <div>Thời gian</div>
-                <div>Số tiền</div>
-            </div>
+      </form>
+    </div>
+    <!-- Login/logout -->
+    <div class="operation operation--close bg-danger p-2">
+      <h5>Đăng xuất</h5>
+      <form class="form form--close">
+        <div class="row">
+          <div class="mb-3 col-4">
+            <input type="text" class="form-control form__input form__input--to" placeholder="USER">
+          </div>
+          <div class="mb-3 col-4">
+            <input type="number" class="form-control form__input form__input--amount" placeholder="PIN">
+          </div>
+          <div class="mb-3 col-4">
+            <button class="btn btn-primary form__btn--transfer">Thực hiện</button>
+          </div>
         </div>
-        <div class="">
-            <div class="movements__row">
-                <div>Thông tin</div>
-                <div>Thời gian</div>
-                <div>Số tiền</div>
-            </div>
-        </div>
-        <div class="">
-            <div class="movements__row">
-                <div>Thông tin</div>
-                <div>Thời gian</div>
-                <div>Số tiền</div>
-            </div>
-        </div>
-        <div class="">
-            <div class="movements__row">
-                <div>Thông tin</div>
-                <div>Thời gian</div>
-                <div>Số tiền</div>
-            </div>
-        </div>
-    </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+      </form>
+    </div>
+    <div class="summary">
+      <div class="col-6 d-flex justify-content-between">
+        <span>Chuyển tiền: <strong class="text-success">5200</strong></span>
+        <span>Vay: <strong class="text-danger">5200</strong></span>
+        <span>Quan tâm: <strong class="text-danger">5200</strong></span>
+        <button class="badge bg-secondary">SORT</button>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        Bạn sẽ đăng xuất sau <strong>5:00</strong>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
